@@ -70,7 +70,6 @@ npm install
 ### 3. Setup Environment Variables
 Create a .env file in the root:
 ```bash
-JWT_SECRET=supersecret
 GRAPHQL_ENDPOINT=http://localhost:5000/graphql
 SOCKET_URL=http://localhost:5000
 ```
