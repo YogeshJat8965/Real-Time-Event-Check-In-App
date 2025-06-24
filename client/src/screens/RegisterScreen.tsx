@@ -57,87 +57,101 @@ export default function RegisterScreen({ navigation }: any) {
       behavior={Platform.OS === "ios" ? "padding" : undefined}
       style={styles.container}
     >
-      <Text style={styles.title}>📝 Create an Account</Text>
-      <Text style={styles.subtitle}>Let’s get started</Text>
+      <View style={styles.card}>
+        <Text style={styles.title}>📝 Create an Account</Text>
+        <Text style={styles.subtitle}>Let’s get started</Text>
 
-      <TextInput
-        style={styles.input}
-        placeholder="👤 Your Name"
-        value={name}
-        onChangeText={setName}
-        placeholderTextColor="#888"
-      />
+        <TextInput
+          style={styles.input}
+          placeholder="👤 Your Name"
+          value={name}
+          onChangeText={setName}
+          placeholderTextColor="#888"
+        />
 
-      <TextInput
-        style={styles.input}
-        placeholder="📧 Your Email"
-        keyboardType="email-address"
-        value={email}
-        onChangeText={setEmail}
-        placeholderTextColor="#888"
-      />
+        <TextInput
+          style={styles.input}
+          placeholder="📧 Your Email"
+          keyboardType="email-address"
+          value={email}
+          onChangeText={setEmail}
+          placeholderTextColor="#888"
+        />
 
-      <TouchableOpacity
-        style={styles.registerButton}
-        onPress={handleRegister}
-        activeOpacity={0.85}
-      >
-        <Text style={styles.registerText}>
-          {loading ? "Registering..." : "Register"}
-        </Text>
-      </TouchableOpacity>
-
-      <Text style={styles.loginLink}>
-        Already have an account?{" "}
-        <Text
-          style={styles.loginText}
-          onPress={() => navigation.navigate("Login")}
+        <TouchableOpacity
+          style={styles.registerButton}
+          onPress={handleRegister}
+          activeOpacity={0.85}
         >
-          Login here
+          <Text style={styles.registerText}>
+            {loading ? "Registering..." : "Register"}
+          </Text>
+        </TouchableOpacity>
+
+        <Text style={styles.loginLink}>
+          Already have an account?{" "}
+          <Text
+            style={styles.loginText}
+            onPress={() => navigation.navigate("Login")}
+          >
+            Login here
+          </Text>
         </Text>
-      </Text>
+      </View>
     </KeyboardAvoidingView>
   );
 }
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fffdf6",
+    backgroundColor: "#fffefb",
     justifyContent: "center",
+    alignItems: "center",
     paddingHorizontal: 24,
   },
+  card: {
+    width: "90%",
+    maxWidth: 360,
+    backgroundColor: "#ffffff",
+    padding: 24,
+    borderRadius: 16,
+    shadowColor: "#000",
+    shadowOpacity: 0.07,
+    shadowOffset: { width: 0, height: 4 },
+    shadowRadius: 12,
+    elevation: 4,
+  },
   title: {
-    fontSize: 28,
+    fontSize: 26,
     fontWeight: "700",
     color: "#5a3e2b",
     textAlign: "center",
-    marginBottom: 8,
+    marginBottom: 6,
   },
   subtitle: {
-    fontSize: 16,
-    color: "#777",
+    fontSize: 14,
+    color: "#888",
     textAlign: "center",
-    marginBottom: 28,
+    marginBottom: 20,
   },
   input: {
     backgroundColor: "#fff7eb",
+    paddingVertical: 10,
+    paddingHorizontal: 12,
+    borderRadius: 10,
+    fontSize: 15,
+    marginBottom: 14,
     borderColor: "#e0a96d",
     borderWidth: 1,
-    borderRadius: 10,
-    padding: 14,
-    fontSize: 16,
-    marginBottom: 16,
+    width: "100%",
   },
   registerButton: {
     backgroundColor: "#d2691e",
-    paddingVertical: 14,
+    paddingVertical: 12,
     borderRadius: 10,
     alignItems: "center",
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 3 },
-    shadowOpacity: 0.15,
-    shadowRadius: 6,
-    elevation: 4,
+    marginTop: 4,
   },
   registerText: {
     color: "#fff",
@@ -146,9 +160,9 @@ const styles = StyleSheet.create({
   },
   loginLink: {
     textAlign: "center",
-    marginTop: 20,
+    marginTop: 18,
     color: "#555",
-    fontSize: 14,
+    fontSize: 13.5,
   },
   loginText: {
     color: "#e07a5f",
