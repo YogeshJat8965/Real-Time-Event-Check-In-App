@@ -1,6 +1,5 @@
 # Real-Time Event Check-In App (Backend)
-
-This is the **backend** for the Real-Time Event Check-In App. It uses **Node.js**, **GraphQL**, **Prisma (PostgreSQL)**, and **Socket.IO** to support real-time updates, user authentication, and event attendance.
+## Real-Time Event Check-In App is a full-stack application that allows users to register and check in to events in real-time. It features a React Native (Expo) frontend and a Node.js backend powered by GraphQL, Prisma (PostgreSQL), and Socket.IO for instant updates on event participation.
 
 
 ## Getting Started
@@ -82,11 +81,5 @@ Running the App
 ```bash
 npm start
 ```
-Or, platform-specific:
-
-```bash
-npm run web
-```
-📱 You'll need the Expo Go app on your device or a simulator/emulator for native testing.
 
 

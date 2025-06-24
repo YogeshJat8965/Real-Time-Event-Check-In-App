@@ -9,11 +9,14 @@ import EventListScreen from "./src/screens/EventListScreen";
 import EventDetailScreen from "./src/screens/EventDetailScreen";
 import { ErrorBoundary } from "./src/components/ErrorBoundary";
 import Toast from "react-native-toast-message";
+import { Provider as PaperProvider } from 'react-native-paper';
+import { theme } from './src/theme';
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
+    <PaperProvider theme={theme}>
     <ApolloProvider client={client}>
       <ErrorBoundary>
         <NavigationContainer>
@@ -27,5 +30,6 @@ export default function App() {
         <Toast />
       </ErrorBoundary>
     </ApolloProvider>
+    </PaperProvider>
   );
 }
